@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import pl.edu.wszib.jwd.mealplanner.dao.SelectedDishDao;
 import pl.edu.wszib.jwd.mealplanner.model.Dish;
 import pl.edu.wszib.jwd.mealplanner.model.SelectedDish;
@@ -17,6 +18,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Controller
+@RequestMapping("selected-dish")
 public class SelectedDishController {
 
     @Autowired

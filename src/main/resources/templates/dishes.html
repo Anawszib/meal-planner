@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="uk-width-1-6 uk-text-center">
 <!--                                    <div><span class="uk-text-large" th:text="${#numbers.formatDecimal(product.price, 1, 2)} + 'zł'"></span></div>-->
-                                    <a th:href="@{/dishes/{name}(name=${dish.name})}"
+                                    <a th:href="@{/selected-dish/add/{name}(name=${dish.name})}"
 
                                        class="uk-icon-button uk-button-secondary uk-margin" uk-icon="cart"></a>
 <!--                                    <a th:unless="${product.available}" class="uk-icon-button uk-button-default uk-margin" uk-icon="cart"></a>-->
