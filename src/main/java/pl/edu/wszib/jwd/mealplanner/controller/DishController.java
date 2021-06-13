@@ -46,9 +46,11 @@ public class DishController {
         model.addAttribute("dishes", dishService.getAllData());
         return "dishes";
 
+    }
 
-
-
-
+    @GetMapping("dish/{name}")
+    public String getDish(@PathVariable String name, Model model){
+        model.addAttribute("dish",dishService.getDish(name));
+        return "dish";
     }
 }
