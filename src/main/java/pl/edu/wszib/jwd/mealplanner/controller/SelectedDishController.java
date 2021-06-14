@@ -6,16 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.edu.wszib.jwd.mealplanner.dao.SelectedDishDao;
 import pl.edu.wszib.jwd.mealplanner.model.Dish;
-import pl.edu.wszib.jwd.mealplanner.model.SelectedDish;
 import pl.edu.wszib.jwd.mealplanner.service.DishService;
 import pl.edu.wszib.jwd.mealplanner.service.SelectedDishService;
-
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("selected-dish")
@@ -58,11 +51,11 @@ public class SelectedDishController {
         return "select";
     }
 
-    @GetMapping({"/data"})
+    @GetMapping({""})
     public String dataPage(Model model){
-        model.addAttribute("title", DATA_TITLE);
+//        model.addAttribute("title", DATA_TITLE);
         model.addAttribute("selectedDishes", selectedDishService.getAllData());
-        return "data";
+        return "selectedDishes";
     }
 
 //    @GetMapping({"/stat"})

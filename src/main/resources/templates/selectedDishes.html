@@ -16,7 +16,12 @@
             <td>
                 <div>
                     <div class="uk-text-bold" th:text="${selectedDish.dish.name}"></div>
-                    <div th:text="${selectedDish.dish.name} + ' kcal'"></div>
+                    <div th:if="${selectedDish.dish.energy}" th:text="'Kalorie: ' + ${selectedDish.dish.energy} + ' kcal'"></div>
+                    <div th:if="${selectedDish.dish.protein}" th:text="'Białko: ' + ${selectedDish.dish.protein} + ' g'"></div>
+                    <div th:if="${selectedDish.dish.carbohydrates}" th:text="'Węglowodany: ' + ${selectedDish.dish.carbohydrates} + ' g'"></div>
+                    <div th:if="${selectedDish.dish.fat}" th:text="'Tłuszcz: ' + ${selectedDish.dish.fat} + ' g'"></div>
+                    <div th:if="${selectedDish.dish.fiber}" th:text="'Błonnik: ' + ${selectedDish.dish.fiber} + ' g'"></div>
+                    <div th:if="${selectedDish.dish.salt}" th:text="'Sól: ' + ${selectedDish.dish.salt} + ' g'"></div>
                 </div>
             </td>
             <td>
