@@ -46,7 +46,7 @@
 
                                     <h4><a th:href="@{/dish/{name}(name=${dish.name})}" class="uk-link-text" th:text="${dish.name}"></a></h4>
 <!--                                    <p th:text="${#strings.substring(product.description, 0, 50)} + '...'"></p>-->
-                                    <p th:text="${dish.energy} + ' kcal'"></p>
+                                    <p th:if="${dish.energy}" th:text="${dish.energy} + ' kcal'"></p>
 <!--                                    <span class="uk-badge uk-background-secondary" th:text="|${product.quantity}szt.|"></span>-->
                                 </div>
                                 <div class="uk-width-1-6 uk-text-center">
