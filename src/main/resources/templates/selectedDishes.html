@@ -15,7 +15,7 @@
             </td>
             <td>
                 <div>
-                    <div class="uk-text-bold" th:text="${selectedDish.dish.name}"></div>
+                    <div><a th:href="@{/dish/{name}(name=${selectedDish.dish.name})}" class="uk-link-text uk-text-bold" th:text="${selectedDish.dish.name}"></a></div>
                     <div th:if="${selectedDish.dish.energy}" th:text="'Kalorie: ' + ${selectedDish.dish.energy} + ' kcal'"></div>
                     <div th:if="${selectedDish.dish.protein}" th:text="'Białko: ' + ${selectedDish.dish.protein} + ' g'"></div>
                     <div th:if="${selectedDish.dish.carbohydrates}" th:text="'Węglowodany: ' + ${selectedDish.dish.carbohydrates} + ' g'"></div>
