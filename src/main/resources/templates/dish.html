@@ -9,7 +9,7 @@
         </div>
         <div class="uk-width-1-2">
             <h1 th:text="${dish.name}"></h1>
-            <div class="uk-margin-large-top">
+            <div class="uk-margin-top">
                 <div class="uk-margin uk-text-lead" th:text="'Wartości odżywcze'"></div>
                 <div th:if="${dish.energy}" class="uk-margin" th:text="'Kalorie: ' + ${dish.energy} + ' kcal'"></div>
                 <div th:if="${dish.protein}" class="uk-margin" th:text="'Białko: ' + ${dish.protein} + ' g'"></div>
@@ -17,6 +17,9 @@
                 <div th:if="${dish.fat}" class="uk-margin" th:text="'Tłuszcz: '+ ${dish.fat} + ' g'"></div>
                 <div th:if="${dish.fiber}" class="uk-margin" th:text="'Błonnik: '+ ${dish.fiber} + ' g'"></div>
                 <div th:if="${dish.salt}" class="uk-margin" th:text="'Sól: '+ ${dish.salt} + ' g'"></div>
+                <div class="uk-margin-large-top">
+                    <a th:href="@{/selected-dish/add/{name}(name=${dish.name})}" class="uk-button uk-button-secondary uk-width-1-2">Wybierz danie</a>
+                </div>
             </div>
 <!--            <span th:text="${dish.description}"></span>-->
 <!--            <div class="uk-margin uk-text-lead" th:text="${#numbers.formatDecimal(product.price, 1, 2)} + 'zł'"></div>-->
