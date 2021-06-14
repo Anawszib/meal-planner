@@ -32,6 +32,12 @@ public class SelectedDishServiceImpl implements SelectedDishService{
 
     @Override
     @Transactional
+    public void remove(Integer id){
+        selectedDishDao.deleteById(id);
+    }
+
+    @Override
+    @Transactional
     public void save(Dish dish) {
         selectedDishDao.save(new SelectedDish(dish));
     }

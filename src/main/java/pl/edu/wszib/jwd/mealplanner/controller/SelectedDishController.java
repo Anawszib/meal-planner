@@ -30,48 +30,20 @@ public class SelectedDishController {
         return "redirect:/dishes";
     }
 
-
-    @GetMapping({"/select/{dish}", "/select"})
-    public String selectDishPage(@PathVariable(required = false) String dish, Model model){
-
-//        if(dish != null){
-//            selectedDishService.save(dish);
-//        }
-
-
-
-        String[][] dishes = {
-                {"pierogi ruskie", "pierogi z mięsem", "pierogi z kapustą", "pierogi z grzybami"},
-                {"pierogi z truskawkami", "pierogi ze śliwkami","pierogi z borówkami", "pierogi z jabłkami"},
-                {"pierogi z serem", "pierogi leniwe", "lazanki", "krokiety"}
-        };
-
-        model.addAttribute("title", SELECT_DISH_TITLE);
-        model.addAttribute("dishes", dishes);
-        return "select";
+    @GetMapping("remove/{selectedDishId}")
+    public String remove(@PathVariable Integer selectedDishId){
+        selectedDishService.remove(selectedDishId);
+        return "redirect:/selected-dish";
     }
+
+
+
 
     @GetMapping({""})
     public String dataPage(Model model){
-//        model.addAttribute("title", DATA_TITLE);
         model.addAttribute("selectedDishes", selectedDishService.getAllData());
         return "selectedDishes";
     }
 
-//    @GetMapping({"/stat"})
-//    public String statPage(Model model){
-//        List<SelectedDish> selectedDishes = (List)selectedDishService.getAllData();
-//        Map<String, Long> dataMap = selectedDishes.stream().collect(Collectors.groupingBy(SelectedDish::getDish,Collectors.counting()));
-//
-//        model.addAttribute("title", STAT_TITLE);
-//        model.addAttribute("labels", dataMap.keySet());
-//        model.addAttribute("values", dataMap.values());
-//
-//        return "stat";
-//    }
 
-//    @GetMapping({"/"})
-//    public String showStartPage(){
-//        return "redirect:select";
-//    }
 }

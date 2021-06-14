@@ -29,8 +29,8 @@
             </td>
 <!--            <td class="uk-text-right uk-text-bold uk-width-small" th:text="${#numbers.formatDecimal(item.getPrice(), 1, 2)} + 'zł'"></td>-->
             <td style="width: 30px">
-<!--                <a class="uk-link-text" th:href="@{shopping-cart/remove/{id}(id=${item.id})}">-->
-<!--                    <span uk-icon="trash"></span>-->
+                <a class="uk-link-text" th:href="@{selected-dish/remove/{id}(id=${selectedDish.id})}">
+                    <span class="uk-icon-button uk-button-secondary" uk-icon="minus"></span>
                 </a>
             </td>
         </tr>

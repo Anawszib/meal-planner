@@ -10,7 +10,7 @@
         <div class="uk-width-1-2">
             <h1 th:text="${dish.name}"></h1>
             <div class="uk-margin-top">
-                <div class="uk-margin uk-text-lead" th:text="'Wartości odżywcze'"></div>
+                <div th:if="${dish.energy}" class="uk-margin uk-text-lead" th:text="'Wartości odżywcze'"></div>
                 <div th:if="${dish.energy}" class="uk-margin" th:text="'Kalorie: ' + ${dish.energy} + ' kcal'"></div>
                 <div th:if="${dish.protein}" class="uk-margin" th:text="'Białko: ' + ${dish.protein} + ' g'"></div>
                 <div th:if="${dish.carbohydrates}" class="uk-margin" th:text="'Węglowodany: '+ ${dish.carbohydrates} + ' g'"></div>
