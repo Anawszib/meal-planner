@@ -6,7 +6,5 @@ import pl.edu.wszib.jwd.mealplanner.model.SelectedDish;
 
 @Repository
 public interface SelectedDishDao extends CrudRepository<SelectedDish, Integer> {
-    SelectedDish findFirstByDishName(String dishName);
-    void deleteByDishName(String dishName);
 
 }

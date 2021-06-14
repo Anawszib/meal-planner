@@ -19,10 +19,6 @@ public class SelectedDishController {
     @Autowired
     DishService dishService;
 
-    public static final String SELECT_DISH_TITLE = "Wybierz danie";
-    public static final String DATA_TITLE = "Dane";
-    public static final String STAT_TITLE = "Statystyki";
-
     @GetMapping("add/{dishName}")
     public String add(@PathVariable String dishName) {
         Dish dish = dishService.getDish(dishName);
@@ -35,9 +31,6 @@ public class SelectedDishController {
         selectedDishService.remove(selectedDishId);
         return "redirect:/selected-dish";
     }
-
-
-
 
     @GetMapping({""})
     public String dataPage(Model model){
