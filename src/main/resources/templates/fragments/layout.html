@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<html lang="en" xmlns:th="https://www.thymeleaf.org" th:fragment="layout(container)">
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      th:fragment="layout(container)">
 <head>
     <meta charset="UTF-8">
-    <title>Meal Planner</title>
+
+    <title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE">Planer posiłków</title>
+<!--    <title>Meal Planner</title>-->
     <link rel="stylesheet" th:href="@{/css/uikit.min.css}">
     <link rel="stylesheet" th:href="@{/css/styles.css}">
     <script th:src="@{/js/uikit.min.js}"></script>

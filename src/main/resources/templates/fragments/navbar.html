@@ -5,16 +5,18 @@
 <div th:fragment="navbar" class="uk-navbar-container uk-background-secondary" uk-navbar>
     <div class="uk-navbar-center">
         <ul class="uk-navbar-nav uk-text-large">
-            <li class="uk-active"><a th:href="@{/dishes}">Lista dań</a></li>
-            <li><a th:href="@{/selected-dish}">Wybrane dania</a></li>
+            <li class="uk-navbar-item" th:classappend="${title == 'Lista dań' ? 'uk-active' : ''}">
+                 <a th:href="@{/dishes}">Lista dań</a></li>
+            <li class="uk-navbar-item" th:classappend="${title == 'Wybrane dania' ? 'uk-active' : ''}">
+                <a th:href="@{/selected-dish}">Wybrane dania</a></li>
         </ul>
     </div>
-    <div class="uk-navbar-right">
-        <ul class="uk-navbar-nav">
-            <li><a class="uk-padding-remove" th:href="@{/shopping-cart}"><span uk-icon="icon: cart; ratio: 1.5"></span></a></li>
-            <li><a href="#"><span th:text="${cntProductsInCart}" class="uk-badge uk-background-secondary"></span></a></li>
-        </ul>
-    </div>
+<!--    <div class="uk-navbar-right">-->
+<!--        <ul class="uk-navbar-nav">-->
+<!--            <li><a class="uk-padding-remove" th:href="@{/shopping-cart}"><span uk-icon="icon: cart; ratio: 1.5"></span></a></li>-->
+<!--            <li><a href="#"><span th:text="${cntProductsInCart}" class="uk-badge uk-background-secondary"></span></a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
 </div>
 
 </body>

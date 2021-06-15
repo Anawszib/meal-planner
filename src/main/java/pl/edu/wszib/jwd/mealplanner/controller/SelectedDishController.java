@@ -19,6 +19,8 @@ public class SelectedDishController {
     @Autowired
     DishService dishService;
 
+    public static final String SELECTED_DISHES_TITLE = "Wybrane dania";
+
     @GetMapping("add/{dishName}")
     public String add(@PathVariable String dishName) {
         Dish dish = dishService.getDish(dishName);
@@ -40,6 +42,7 @@ public class SelectedDishController {
 
     @GetMapping({""})
     public String dataPage(Model model){
+        model.addAttribute("title", SELECTED_DISHES_TITLE);
         model.addAttribute("selectedDishes", selectedDishService.getAllData());
         return "selectedDishes";
     }

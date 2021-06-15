@@ -33,7 +33,8 @@ public class DishController {
     @Autowired
     SelectedDishService selectedDishService;
 
-    public static final String DISH_TITLE = "Wybierz danie";
+    public static final String DISHES_TITLE = "Lista dań";
+    public static final String DISH_TITLE = "Szczegóły dania";
 
     @GetMapping({"","/dishes"})
     public String dishes(Model model){
@@ -42,7 +43,7 @@ public class DishController {
 //            selectedDishService.save(dish);
 //        }
 
-        model.addAttribute("title", DISH_TITLE);
+        model.addAttribute("title", DISHES_TITLE);
         model.addAttribute("dishes", dishService.getAllData());
         return "dishes";
 
@@ -50,6 +51,7 @@ public class DishController {
 
     @GetMapping("dish/{name}")
     public String getDish(@PathVariable String name, Model model){
+        model.addAttribute("title", DISH_TITLE);
         model.addAttribute("dish",dishService.getDish(name));
         return "dish";
     }

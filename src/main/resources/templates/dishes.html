@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::.uk-container})}">
-<!--<head>-->
-<!--    &lt;!&ndash;    <title th:text="${title}"></title>&ndash;&gt;-->
-<!--    <title>aaa</title>-->
-<!--</head>-->
+<html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/layout}" th:replace="~{fragments/layout :: layout(~{::.uk-container})}">
+<head>
+    <title th:text="${title}"></title>
+</head>
 
 <body>
 
