@@ -36,12 +36,14 @@
         </tr>
         </tbody>
     </table>
-<!--    <div th:if="${!productInCart.isEmpty()}" class="uk-text-right">-->
-<!--        <h3 th:text="|Suma: ${#numbers.formatDecimal(totalPrice, 1, 2)}zł|"></h3>-->
-<!--        <a th:href="@{/shopping-cart/remove-all}" class="uk-button uk-button-default">Wyczyść koszyk</a>-->
-<!--        <a th:href="@{/shopping-cart/order}" class="uk-button uk-button-secondary">Kup teraz</a>-->
-<!--    </div>-->
+<!--    <div th:if="${!selectedDishes.isEmpty}" class="uk-text-right">-->
+    <div class="uk-text-right">
+      <a th:href="@{selected-dish/remove-all}" class="uk-button uk-button-secondary">Usuń wszystkie dania</a>
+    </div>
 </div>
+
+
+
 
 </body>
 </html>

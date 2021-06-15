@@ -28,6 +28,12 @@ public class SelectedDishServiceImpl implements SelectedDishService{
 
     @Override
     @Transactional
+    public void removeAll(){
+        selectedDishDao.deleteAll();
+    }
+
+    @Override
+    @Transactional
     public Iterable<SelectedDish> getAllData() {
         return selectedDishDao.findAll();
     }

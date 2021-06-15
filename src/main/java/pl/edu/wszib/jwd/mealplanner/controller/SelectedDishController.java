@@ -32,6 +32,12 @@ public class SelectedDishController {
         return "redirect:/selected-dish";
     }
 
+    @GetMapping("remove-all")
+    public String removeAll(){
+        selectedDishService.removeAll();
+        return "redirect:/selected-dish";
+    }
+
     @GetMapping({""})
     public String dataPage(Model model){
         model.addAttribute("selectedDishes", selectedDishService.getAllData());
