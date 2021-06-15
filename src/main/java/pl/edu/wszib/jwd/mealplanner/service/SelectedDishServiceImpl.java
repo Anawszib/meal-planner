@@ -7,6 +7,7 @@ import pl.edu.wszib.jwd.mealplanner.model.Dish;
 import pl.edu.wszib.jwd.mealplanner.model.SelectedDish;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 public class SelectedDishServiceImpl implements SelectedDishService{
@@ -34,7 +35,7 @@ public class SelectedDishServiceImpl implements SelectedDishService{
 
     @Override
     @Transactional
-    public Iterable<SelectedDish> getAllData() {
+    public List<SelectedDish> getAllData() {
         return selectedDishDao.findAll();
     }
 }
