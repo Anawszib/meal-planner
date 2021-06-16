@@ -15,7 +15,11 @@
         <div class="uk-width-1-2">
             <h1 th:text="${dish.name}"></h1>
             <div class="uk-margin-top">
-                <div th:if="${dish.energy}" class="uk-margin uk-text-lead" th:text="'Wartości odżywcze'"></div>
+                <div th:if="!${dish.energy} and !${dish.protein} and !${dish.carbohydrates} and !${dish.fat} and
+                !${dish.fiber} and !${dish.salt}" class="uk-margin uk-text-lead uk-alert"
+                     th:text="'Brak danych o wartościach odżywczych'"></div>
+                <div th:if="${dish.energy} or ${dish.protein} or ${dish.carbohydrates} or ${dish.fat} or
+                ${dish.fiber} or ${dish.salt}" class="uk-margin uk-text-lead" th:text="'Wartości odżywcze'"></div>
                 <div th:if="${dish.energy}" class="uk-margin" th:text="'Kalorie: ' + ${dish.energy} + ' kcal'"></div>
                 <div th:if="${dish.protein}" class="uk-margin" th:text="'Białko: ' + ${dish.protein} + ' g'"></div>
                 <div th:if="${dish.carbohydrates}" class="uk-margin" th:text="'Węglowodany: '+ ${dish.carbohydrates} + ' g'"></div>

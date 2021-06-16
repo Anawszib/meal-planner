@@ -9,6 +9,8 @@
                  <a th:href="@{/dishes}">Lista dań</a></li>
             <li class="uk-navbar-item" th:classappend="${title == 'Wybrane dania' ? 'uk-active' : ''}">
                 <a th:href="@{/selected-dish}">Wybrane dania</a></li>
+            <li class="uk-navbar-item" th:classappend="${title == 'Wartości odżywcze' ? 'uk-active' : ''}">
+                <a th:href="@{/nutritional-values}">Wartości odżywcze</a></li>
         </ul>
     </div>
 <!--    <div class="uk-navbar-right">-->

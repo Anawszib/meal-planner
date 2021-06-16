@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/layout}" th:replace="~{fragments/layout :: layout(~{::.uk-container})}">
+<head>
+    <title th:text="${title}"></title>
+</head>
+
+<body>
+
+
+<div class="uk-container uk-margin-large-top" uk-height-viewport="expand: true">
+    <div class="uk-grid-large" uk-grid="masonry: true">
+
+<!--        <div th:if="${selectedDishes.isEmpty()}" class="uk-alert"><h4 class="uk-text-center">Nie wybrano żadnego dania</h4></div>-->
+
+        <div style="max-width: 800px; margin: 50px auto">
+            <canvas id="myChart" width="800" height="400"></canvas>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script th:inline="javascript">
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Kalorie', 'Białko', 'Węglowodany', 'Tłuszcz', 'Błonnik', 'Sól'],
+                    datasets: [{
+                        label: '% dziennej normy',
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
