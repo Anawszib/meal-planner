@@ -13,7 +13,6 @@
 
 <!--        <div th:if="${selectedDishes.isEmpty()}" class="uk-alert"><h4 class="uk-text-center">Nie wybrano żadnego dania</h4></div>-->
 
-        <div th:text="${energy}"></div>
 
         <div style="max-width: 800px; margin: 50px auto">
             <canvas id="myChart" width="800" height="400"></canvas>
@@ -29,7 +28,7 @@
                     labels: ['Kalorie', 'Białko', 'Węglowodany', 'Tłuszcz', 'Błonnik', 'Sól'],
                     datasets: [{
                         label: '% dziennej normy',
-                        data: [${energy}, 19, 3, 5, 2, 3],
+                        data: [[${nutritionalValues}]],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
@@ -46,7 +45,15 @@
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)'
                         ],
-                        borderWidth: 1
+                        borderWidth: 1,
+                        order: 1
+                    }, {
+                        label: 'Referencyjne wartości spożycia',
+                        data: [100, 100, 100, 100, 100, 100],
+                        type: 'line',
+                        borderColor: 'rgb(255, 99, 132)',
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        order: 2
                     }]
                 },
                 options: {

@@ -22,19 +22,12 @@ public class NutritionalValuesController {
     @Autowired
     NutritionalValuesService nutritionalValuesService;
 
-
-
     public static final String NUTRITIONAL_VALUES_TITLE = "Wartości odżywcze";
 
     @GetMapping({""})
     public String nutritionalValues(Model model){
-
-//
-//        Map<Dish, Long> nutritionalValuesMap = selectedDish.stream().collect(Collectors.groupingBy(SelectedDish::getDish, Collectors.counting()));
-
-
         model.addAttribute("title", NUTRITIONAL_VALUES_TITLE);
-        model.addAttribute("energy", nutritionalValuesService.sumEnergy());
+        model.addAttribute("nutritionalValues", nutritionalValuesService.sumNutritionalValues());
         return "nutritionalValues";
 
     }
