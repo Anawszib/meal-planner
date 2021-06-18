@@ -2,14 +2,20 @@ package pl.edu.wszib.jwd.mealplanner.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.edu.wszib.jwd.mealplanner.dao.DishDao;
+import pl.edu.wszib.jwd.mealplanner.dao.NutritionalValuesDao;
 import pl.edu.wszib.jwd.mealplanner.model.Dish;
 import pl.edu.wszib.jwd.mealplanner.model.SelectedDish;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class NutritionalValuesServiceImpl implements NutritionalValuesService {
+
+    @Autowired
+    NutritionalValuesDao nutritionalValuesDao;
 
     @Autowired
     SelectedDishService selectedDishService;
@@ -23,82 +29,67 @@ public class NutritionalValuesServiceImpl implements NutritionalValuesService {
 
     @Override
     public Double sumEnergy() {
-
-        try {
             return selectedDishService.getAllData().stream()
                     .map(SelectedDish::getDish)
                     .map(Dish::getEnergy)
+                    .filter(Objects::nonNull)
                     .mapToDouble(Double::doubleValue)
                     .sum();
-        } catch (NullPointerException e) {
-            return 0.0;
-        }
     }
 
     @Override
     public Double sumProtein() {
-        try {
+
             return selectedDishService.getAllData().stream()
                     .map(SelectedDish::getDish)
                     .map(Dish::getProtein)
+                    .filter(Objects::nonNull)
                     .mapToDouble(Double::doubleValue)
                     .sum();
-        } catch (NullPointerException e) {
-            return 0.0;
-        }
     }
 
     @Override
     public Double sumCarbohydrates() {
-        try {
             return selectedDishService.getAllData().stream()
                     .map(SelectedDish::getDish)
                     .map(Dish::getCarbohydrates)
+                    .filter(Objects::nonNull)
                     .mapToDouble(Double::doubleValue)
                     .sum();
-        } catch (NullPointerException e) {
-            return 0.0;
-        }
     }
 
     @Override
     public Double sumFat() {
-        try {
+
             return selectedDishService.getAllData().stream()
                     .map(SelectedDish::getDish)
                     .map(Dish::getFat)
+                    .filter(Objects::nonNull)
                     .mapToDouble(Double::doubleValue)
                     .sum();
-        } catch (NullPointerException e) {
-            return 0.0;
-        }
     }
 
     @Override
     public Double sumFiber() {
-        try {
+
             return selectedDishService.getAllData().stream()
                     .map(SelectedDish::getDish)
                     .map(Dish::getFiber)
+                    .filter(Objects::nonNull)
                     .mapToDouble(Double::doubleValue)
                     .sum();
-        } catch (NullPointerException e) {
-            return 0.0;
-        }
+
     }
 
     @Override
     public Double sumSalt() {
 
-        try {
             return selectedDishService.getAllData().stream()
                     .map(SelectedDish::getDish)
                     .map(Dish::getSalt)
+                    .filter(Objects::nonNull)
                     .mapToDouble(Double::doubleValue)
                     .sum();
-        } catch (NullPointerException e) {
-            return 0.0;
-        }
     }
 
     @Override
