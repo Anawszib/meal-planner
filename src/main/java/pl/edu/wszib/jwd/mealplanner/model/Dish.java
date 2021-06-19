@@ -23,8 +23,7 @@ public class Dish {
     public Dish() {
     }
 
-    public Dish(Integer id, String name, Double energy, Double protein, Double carbohydrates, Double fat, Double fiber, Double salt, String image, String source) {
-        this.id = id;
+    public Dish(String name, Double energy, Double protein, Double carbohydrates, Double fat, Double fiber, Double salt, String image, String source) {
         this.name = name;
         this.energy = energy;
         this.protein = protein;
