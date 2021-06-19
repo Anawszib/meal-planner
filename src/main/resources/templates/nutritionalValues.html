@@ -8,10 +8,17 @@
 <body>
 
 
-<div class="uk-container uk-margin-large-top" uk-height-viewport="expand: true">
+
+<div class="uk-container uk-container-small uk-margin-large-top" uk-height-viewport="expand: true">
+    <div th:if="${selectedDishes.isEmpty()}" class="uk-alert"><h4 class="uk-text-center">Nie wybrano żadnego dania</h4></div>
+
+    <div th:if="!${selectedDishes.isEmpty()}">
+    <div><h4 class="uk-text-center">% RWS wybranych dań</h4></div>
+
     <div class="uk-grid-large" uk-grid="masonry: true">
 
 <!--        <div th:if="${selectedDishes.isEmpty()}" class="uk-alert"><h4 class="uk-text-center">Nie wybrano żadnego dania</h4></div>-->
+
 
 
         <div style="max-width: 800px; margin: 50px auto">
@@ -57,6 +64,9 @@
                     }]
                 },
                 options: {
+                    plugins: {
+                        legend: {display: false}
+                    },
                     scales: {
                         y: {
                             beginAtZero: true
@@ -65,6 +75,7 @@
                 }
             });
         </script>
+    </div>
     </div>
 </div>
 

@@ -22,12 +22,16 @@ public class NutritionalValuesController {
     @Autowired
     NutritionalValuesService nutritionalValuesService;
 
+    @Autowired
+    SelectedDishService selectedDishService;
+
     public static final String NUTRITIONAL_VALUES_TITLE = "Wartości odżywcze";
 
     @GetMapping({""})
     public String nutritionalValues(Model model){
         model.addAttribute("title", NUTRITIONAL_VALUES_TITLE);
         model.addAttribute("nutritionalValues", nutritionalValuesService.sumNutritionalValues());
+        model.addAttribute("selectedDishes", selectedDishService.getAllData());
         return "nutritionalValues";
 
     }
