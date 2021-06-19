@@ -37,6 +37,11 @@
 <!--                <a th:unless="${product.available}" class="uk-button uk-button-default uk-width-1-2">Dodaj do koszyka</a>-->
 <!--            </div>-->
         </div>
+        <div class="uk-grid" uk-grid>
+
+                <a th:if="${dish.source}" class="uk-margin uk-button" th:href="${dish.source}">Strona źródłowa</a>
+
+        </div>
 <!--        <div class="uk-width-1-1">-->
 <!--            <h2>Opinie</h2>-->
 <!--            <hr>-->

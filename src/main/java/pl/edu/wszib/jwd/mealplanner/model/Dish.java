@@ -19,11 +19,12 @@ public class Dish {
     private Double salt;
     @Column(length = 400)
     private String image;
+    private String source;
 
     public Dish() {
     }
 
-    public Dish(Integer id, String name, Double energy, Double protein, Double carbohydrates, Double fat, Double fiber, Double salt, String image) {
+    public Dish(Integer id, String name, Double energy, Double protein, Double carbohydrates, Double fat, Double fiber, Double salt, String image, String source) {
         this.id = id;
         this.name = name;
         this.energy = energy;
@@ -33,6 +34,7 @@ public class Dish {
         this.fiber = fiber;
         this.salt = salt;
         this.image = image;
+        this.source = source;
     }
 
     public Integer getId() {
@@ -105,6 +107,14 @@ public class Dish {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
     }
 }
 
