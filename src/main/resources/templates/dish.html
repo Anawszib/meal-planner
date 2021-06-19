@@ -30,30 +30,12 @@
                     <a th:href="@{/selected-dish/add/{name}(name=${dish.name})}" class="uk-button uk-button-secondary uk-width-1-2">Wybierz danie</a>
                 </div>
             </div>
-<!--            <span th:text="${dish.description}"></span>-->
-<!--            <div class="uk-margin uk-text-lead" th:text="${#numbers.formatDecimal(product.price, 1, 2)} + 'zł'"></div>-->
-<!--            <div class="uk-margin">-->
-<!--                <a th:href="@{/shopping-cart/add/{id}(id=${product.id})}" th:if="${product.available}" class="uk-button uk-button-secondary uk-width-1-2">Dodaj do koszyka</a>-->
-<!--                <a th:unless="${product.available}" class="uk-button uk-button-default uk-width-1-2">Dodaj do koszyka</a>-->
-<!--            </div>-->
         </div>
         <div class="uk-grid" uk-grid>
 
                 <a th:if="${dish.source}" class="uk-margin uk-button" th:href="${dish.source}">Strona źródłowa</a>
 
         </div>
-<!--        <div class="uk-width-1-1">-->
-<!--            <h2>Opinie</h2>-->
-<!--            <hr>-->
-<!--            <div th:each="review : ${reviews}" class="uk-margin-top">-->
-<!--                <span class="uk-text-small" th:text="${#temporals.format(review.created, 'dd-MM-yyyy HH:mm')}"></span>-->
-<!--                <h4 class="uk-margin-small">-->
-<!--                    <span th:text="${review.subject}"></span>-->
-<!--                    <span th:classappend="${s > review.rating} ? 'lightgray' : ''" th:each="s : ${#numbers.sequence(1, 5)}" uk-icon="icon: star; ratio: 0.8"></span>-->
-<!--                </h4>-->
-<!--                <span th:text="${review.description}"></span>-->
-<!--            </div>-->
-<!--        </div>-->
     </div>
 </div>
 

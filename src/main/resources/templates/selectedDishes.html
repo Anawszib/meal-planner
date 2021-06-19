@@ -9,7 +9,6 @@
 
 <div class="uk-container uk-container-small uk-margin-large-top uk-margin-large-bottom" uk-height-viewport="expand: true">
     <div th:if="${selectedDishes.isEmpty()}" class="uk-alert"><h4 class="uk-text-center">Nie wybrano żadnego dania</h4></div>
-<!--    <div class="uk-text-center uk-margin-large-top" th:if="${productInCart.isEmpty()}"><span uk-icon="icon: cart; ratio: 10"></span></div>-->
     <table class="uk-table uk-table-divider">
 
 
@@ -30,9 +29,9 @@
                 </div>
             </td>
             <td>
-<!--                <div th:text="${item.quantity} + 'szt.'"></div>-->
+
             </td>
-<!--            <td class="uk-text-right uk-text-bold uk-width-small" th:text="${#numbers.formatDecimal(item.getPrice(), 1, 2)} + 'zł'"></td>-->
+
             <td style="width: 30px">
                 <a class="uk-link-text" th:href="@{selected-dish/remove/{id}(id=${selectedDish.id})}">
                     <span class="uk-icon-button uk-button-secondary" uk-icon="minus"></span>
@@ -45,9 +44,6 @@
       <a th:href="@{selected-dish/remove-all}" class="uk-button uk-button-secondary">Usuń wszystkie dania</a>
     </div>
 </div>
-
-
-
 
 </body>
 </html>

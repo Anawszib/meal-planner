@@ -11,26 +11,7 @@
 <div class="uk-container uk-margin-large-top" uk-height-viewport="expand: true">
     <div class="uk-grid-large" uk-grid="masonry: true">
         <div class="uk-width-1-4 uk-padding-small">
-<!--            <form method="get">-->
-<!--                <div class="uk-flex uk-flex-between">-->
-<!--                    <h3>Filtry</h3>-->
-<!--                    <a class="uk-link uk-link-muted" href="/products"><span uk-icon="close"></span>Usuń filtry</a>-->
-<!--                </div>-->
-<!--                <h4 class="uk-margin-small-top">Cena</h4>-->
-<!--                <div class="uk-grid-small" uk-grid>-->
-<!--                    <div class="uk-width-1-2">-->
-<!--                        <input name="from" class="uk-input" placeholder="Od"/>-->
-<!--                    </div>-->
-<!--                    <div class="uk-width-1-2">-->
-<!--                        <input name="to" class="uk-input" placeholder="Do"/>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <h4>Dostępność</h4>-->
-<!--                <input name="onStock" type="checkbox" class="uk-checkbox"> Tylko dostępne-->
-<!--                <div class="uk-margin">-->
-<!--                    <input type="submit" class="uk-button uk-width-1-1" value="Filtruj"/>-->
-<!--                </div>-->
-<!--            </form>-->
+
         </div>
         <div class="uk-width-3-4">
             <div>
@@ -45,16 +26,13 @@
                                 <div class="uk-width-5-6">
 
                                     <h4><a th:href="@{/dish/{name}(name=${dish.name})}" class="uk-link-text" th:text="${dish.name}"></a></h4>
-<!--                                    <p th:text="${#strings.substring(product.description, 0, 50)} + '...'"></p>-->
                                     <p th:if="${dish.energy}" th:text="${dish.energy} + ' kcal'"></p>
-<!--                                    <span class="uk-badge uk-background-secondary" th:text="|${product.quantity}szt.|"></span>-->
                                 </div>
                                 <div class="uk-width-1-6 uk-text-center">
-<!--                                    <div><span class="uk-text-large" th:text="${#numbers.formatDecimal(product.price, 1, 2)} + 'zł'"></span></div>-->
-                                    <a th:href="@{/selected-dish/add/{name}(name=${dish.name})}"
 
+                                    <a th:href="@{/selected-dish/add/{name}(name=${dish.name})}"
                                        class="uk-icon-button uk-button-secondary uk-margin" uk-icon="plus"></a>
-<!--                                    <a th:unless="${product.available}" class="uk-icon-button uk-button-default uk-margin" uk-icon="cart"></a>-->
+
                                 </div>
                             </div>
                         </div>

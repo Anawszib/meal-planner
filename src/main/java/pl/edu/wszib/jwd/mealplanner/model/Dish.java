@@ -2,7 +2,6 @@ package pl.edu.wszib.jwd.mealplanner.model;
 
 import javax.persistence.*;
 
-
 @Entity
 @Table(name = "Dishes")
 public class Dish {

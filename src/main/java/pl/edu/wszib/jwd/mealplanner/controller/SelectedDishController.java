@@ -46,6 +46,4 @@ public class SelectedDishController {
         model.addAttribute("selectedDishes", selectedDishService.getAllData());
         return "selectedDishes";
     }
-
-
 }

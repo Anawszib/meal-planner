@@ -5,9 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.edu.wszib.jwd.mealplanner.dao.DishDao;
 import pl.edu.wszib.jwd.mealplanner.model.Dish;
-import pl.edu.wszib.jwd.mealplanner.model.SelectedDish;
-
-import java.util.Date;
 
 @Service
 public class DishServiceImpl implements DishService{
