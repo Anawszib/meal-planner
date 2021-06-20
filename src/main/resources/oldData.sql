@@ -8,3 +8,6 @@ INSERT INTO dishes (id, name, energy, protein, carbohydrates, fat, image, source
 INSERT INTO dishes (id, name, energy, protein, carbohydrates, fat, fiber, image, source) values (8, 'Wołowina w czerwonym winie', 533, 44, 15, 25, 2.6, 'https://assets.tmecosys.com/image/upload/t_web600x528/img/recipe/vimdb/96693_0-952-2856-2856.jpg', 'https://cookidoo.pl/recipes/recipe/pl/r51475')
 INSERT INTO dishes (id, name, energy, protein, carbohydrates, fat, fiber, image, source) values (9, 'Pizza hawajska', 580, 26.6, 70.4, 22.7, 3.4, 'https://assets.tmecosys.com/image/upload/t_web600x528/img/recipe/vimdb/96417_0-362-1664-1664.jpg', 'https://cookidoo.pl/recipes/recipe/pl/r5412')
 INSERT INTO dishes (id, name, image, source) values (10, 'Surówka z marchewki z chrzanem', 'https://assets.tmecosys.com/image/upload/t_web600x528/img/recipe/vimdb/96421_22-695-1595-1595.jpg', 'https://cookidoo.pl/recipes/recipe/pl/r11487')
+
+
+INSERT INTO selecteddishes (id, dish_id) values (1, 1)

@@ -1,6 +1,7 @@
 package pl.edu.wszib.jwd.mealplanner.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "Dishes")
@@ -9,6 +10,7 @@ public class Dish {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    @NotNull
     private String name;
     private Double energy;
     private Double protein;

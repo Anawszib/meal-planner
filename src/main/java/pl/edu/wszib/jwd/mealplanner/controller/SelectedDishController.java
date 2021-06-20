@@ -24,7 +24,7 @@ public class SelectedDishController {
     @GetMapping("add/{dishName}")
     public String add(@PathVariable String dishName) {
         Dish dish = dishService.getDish(dishName);
-        selectedDishService.add(dish);
+        selectedDishService. add(dish);
         return "redirect:/dishes";
     }
 
