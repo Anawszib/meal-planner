@@ -8,70 +8,75 @@
 <body>
 
 <div class="uk-container uk-margin-large-top uk-margin-large-bottom" uk-height-viewport="expand: true">
-    <form method="POST">
+    <form id="newDish" action="#" th:action="@{/add-new-dish}" th:object="${dish}" method="POST">
         <fieldset class="uk-fieldset">
 
             <div class="uk-margin">
                 <label class="uk-form-label" for="name">Nazwa dania</label>
                 <div class="uk-form-controls">
-                    <input name="name" class="uk-input  uk-form-width-large" id="name" type="text">
-<!--                    <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>-->
-                </div>
+                    <input class="uk-input uk-form-width-large" id="name" type="text" th:field="*{name}"/></div>
+                <span class="uk-label uk-label-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
             </div>
 
             <div class="uk-margin">
                 <label class="uk-form-label" for="energy">Kalorie (kcal)</label>
                 <div class="uk-form-controls">
-                    <input name="energy" class="uk-input  uk-form-width-small" id="energy" type="text">
+                    <input name="energy" class="uk-input uk-form-width-small" id="energy" type="text">
                 </div>
+                <span class="uk-label uk-label-warning" th:if="${#fields.hasErrors('energy')}">Podaj wartość numeryczną</span>
             </div>
 
             <div class="uk-margin">
                 <label class="uk-form-label" for="protein">Białko (g)</label>
                 <div class="uk-form-controls">
-                    <input name="protein" class="uk-input  uk-form-width-small" id="protein" type="text">
+                    <input name="protein" class="uk-input uk-form-width-small" id="protein" type="text">
                 </div>
+                <span class="uk-label uk-label-warning" th:if="${#fields.hasErrors('protein')}">Podaj wartość numeryczną</span>
             </div>
 
             <div class="uk-margin">
                 <label class="uk-form-label" for="carbohydrates">Węglowodany (g)</label>
                 <div class="uk-form-controls">
-                    <input name="carbohydrates" class="uk-input  uk-form-width-small" id="carbohydrates" type="text">
+                    <input name="carbohydrates" class="uk-input uk-form-width-small" id="carbohydrates" type="text">
                 </div>
+                <span class="uk-label uk-label-warning" th:if="${#fields.hasErrors('carbohydrates')}">Podaj wartość numeryczną</span>
             </div>
 
             <div class="uk-margin">
                 <label class="uk-form-label" for="fat">Tłuszcz (g)</label>
                 <div class="uk-form-controls">
-                    <input name="fat" class="uk-input  uk-form-width-small" id="fat" type="text">
+                    <input name="fat" class="uk-input uk-form-width-small" id="fat" type="text">
                 </div>
+                <span class="uk-label uk-label-warning" th:if="${#fields.hasErrors('fat')}">Podaj wartość numeryczną</span>
             </div>
 
             <div class="uk-margin">
                 <label class="uk-form-label" for="fiber">Białko (g)</label>
                 <div class="uk-form-controls">
-                    <input name="fiber" class="uk-input  uk-form-width-small" id="fiber" type="text">
+                    <input name="fiber" class="uk-input uk-form-width-small" id="fiber" type="text">
                 </div>
+                <span class="uk-label uk-label-warning" th:if="${#fields.hasErrors('fiber')}">Podaj wartość numeryczną</span>
             </div>
 
             <div class="uk-margin">
                 <label class="uk-form-label" for="salt">Sól (g)</label>
                 <div class="uk-form-controls">
-                    <input name="salt" class="uk-input  uk-form-width-small" id="salt" type="text">
+                    <input name="salt" class="uk-input uk-form-width-small" id="salt" type="text">
                 </div>
+                <span class="uk-label uk-label-warning" th:if="${#fields.hasErrors('salt')}">Podaj wartość numeryczną</span>
             </div>
 
             <div class="uk-margin">
                 <label class="uk-form-label" for="image">Grafika (adres url)</label>
                 <div class="uk-form-controls">
-                    <input name="image" class="uk-input  uk-form-width-large" id="image" type="text">
+                    <input name="image" class="uk-input uk-form-width-large" id="image" type="text">
                 </div>
             </div>
 
             <div class="uk-margin">
                 <label class="uk-form-label" for="source">Strona źródłowa (adres url)</label>
                 <div class="uk-form-controls">
-                    <input name="source" class="uk-input  uk-form-width-large" id="source" type="text">
+                    <input name="source" class="uk-input uk-form-width-large" id="source" type="text">
                 </div>
             </div>
 

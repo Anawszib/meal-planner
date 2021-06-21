@@ -23,7 +23,7 @@
             <div>
                 <div th:each="dish : ${dishes}" class="uk-card uk-margin-medium gray-card-border" uk-grid>
                     <div class="uk-card-media-left uk-cover-container uk-width-1-5">
-                        <img th:src="${dish.image}" uk-cover>
+                        <img th:src="${dish.image}" uk-cover th:alt="${dish.name}" class="uk-text-center">
                         <canvas width="" height=""></canvas>
                     </div>
                     <div class="uk-width-4-5">

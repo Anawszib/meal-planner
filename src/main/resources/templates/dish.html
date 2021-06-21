@@ -10,7 +10,7 @@
 <div class="uk-container uk-margin-large-top uk-margin-large-bottom" uk-height-viewport="expand: true">
     <div class="uk-grid" uk-grid>
         <div class="uk-width-1-2">
-            <img th:src="${dish.image}" alt="">
+            <img th:src="${dish.image}" th:alt="${dish.name}" class="uk-text-center">
         </div>
         <div class="uk-width-1-2">
             <h1 th:text="${dish.name}"></h1>

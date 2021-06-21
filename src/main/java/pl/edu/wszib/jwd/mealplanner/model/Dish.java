@@ -1,6 +1,8 @@
 package pl.edu.wszib.jwd.mealplanner.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -10,7 +12,7 @@ public class Dish {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @NotNull
+    @NotEmpty(message = "Nazwa dania jest wymagana")
     private String name;
     private Double energy;
     private Double protein;
