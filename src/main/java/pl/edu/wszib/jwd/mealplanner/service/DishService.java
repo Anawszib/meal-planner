@@ -5,4 +5,5 @@ import pl.edu.wszib.jwd.mealplanner.model.Dish;
 public interface DishService {
     Iterable<Dish> getAllData();
     Dish getDish(String name);
+    void save(Dish Dish);
 }
