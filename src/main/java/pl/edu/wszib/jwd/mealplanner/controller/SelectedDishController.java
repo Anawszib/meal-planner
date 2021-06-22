@@ -34,6 +34,13 @@ public class SelectedDishController {
         return "redirect:/selected-dish";
     }
 
+    @GetMapping("remove-by-name/{dishName}")
+    public String removeByDish(@PathVariable String dishName){
+        Dish dish = dishService.getDish(dishName);
+        selectedDishService.removeByDish(dish);
+        return "redirect:/selected-dish";
+    }
+
     @GetMapping("remove-all")
     public String removeAll(){
         selectedDishService.removeAll();

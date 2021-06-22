@@ -29,6 +29,12 @@ public class SelectedDishServiceImpl implements SelectedDishService{
 
     @Override
     @Transactional
+    public void removeByDish(Dish dish) {
+        selectedDishDao.deleteAllByDish(dish);
+    }
+
+    @Override
+    @Transactional
     public void removeAll(){
         selectedDishDao.deleteAll();
     }

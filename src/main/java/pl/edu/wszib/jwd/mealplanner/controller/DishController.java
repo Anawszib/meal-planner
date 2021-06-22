@@ -47,7 +47,6 @@ public class DishController {
     @GetMapping("add-new-dish")
     public String addNewDish(Model model){
         Dish dish = new Dish();
-
         model.addAttribute("title", NEW_DISH_TITLE);
         model.addAttribute("dish",dish);
 
@@ -56,9 +55,6 @@ public class DishController {
 
     @PostMapping("add-new-dish")
     public String postAddNewDish(@Valid Dish dish, BindingResult bindingResult){
-
-
-
         if(bindingResult.hasErrors()){
             return "newDish";
         }

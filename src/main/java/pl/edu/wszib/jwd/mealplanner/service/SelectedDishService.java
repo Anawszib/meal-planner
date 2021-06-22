@@ -8,6 +8,7 @@ import java.util.List;
 public interface SelectedDishService {
     void add(Dish dish);
     void remove(Integer id);
+    void removeByDish(Dish dish);
     void removeAll();
     List<SelectedDish> getAllData();
 
