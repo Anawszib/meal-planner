@@ -7,12 +7,14 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "Dishes")
+//, uniqueConstraints={@UniqueConstraint(columnNames={"id"}), @UniqueConstraint(columnNames={"name"})}
 public class Dish {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @NotEmpty(message = "Nazwa dania jest wymagana")
+    @Column(unique = true)
     private String name;
     private Double energy;
     private Double protein;

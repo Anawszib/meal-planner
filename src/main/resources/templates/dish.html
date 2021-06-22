@@ -29,13 +29,27 @@
                 <div class="uk-margin-large-top">
                     <a th:href="@{/selected-dish/add/{name}(name=${dish.name})}" class="uk-button uk-button-secondary uk-width-1-2">Wybierz danie</a>
                 </div>
+
+                <div class="uk-margin-top">
+                    <button class="uk-icon-button uk-button-secondary" uk-icon="menu"></button>
+<!--                    <button class="uk-button uk-button-secondary uk-width-1-2" type="button">Hover</button>-->
+                    <div uk-dropdown>
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li><a href="#">Edytuj danie</a></li>
+                            <li><a href="#">Usuń danie</a></li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="uk-grid" uk-grid>
 
                 <a th:if="${dish.source}" class="uk-margin uk-button" th:href="${dish.source}">Strona źródłowa</a>
 
+
         </div>
+
     </div>
 </div>
 

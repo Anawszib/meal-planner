@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 import pl.edu.wszib.jwd.mealplanner.model.Dish;
 import pl.edu.wszib.jwd.mealplanner.service.DishService;
@@ -36,7 +37,16 @@ public class NewDishController {
     @PostMapping("")
     public String postAddNewDish(@Valid Dish dish, BindingResult bindingResult){
 
+
+
         if(bindingResult.hasErrors()){
+            return "newDish";
+        }
+
+        if(dishService.getDish(dish.getName()) != null){
+            FieldError error = new FieldError("dish", "name",
+                    "Danie o podanej nazwie już istnieje");
+            bindingResult.addError(error);
             return "newDish";
         }
 
