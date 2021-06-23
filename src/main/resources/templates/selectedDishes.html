@@ -33,16 +33,20 @@
             </td>
 
             <td style="width: 30px">
-                <a class="uk-link-text" th:href="@{selected-dish/remove/{id}(id=${selectedDish.id})}">
-                    <span class="uk-icon-button uk-button-secondary" uk-icon="minus"></span>
-                </a>
+               <form action="#" th:action="@{/selected-dish/remove/{id}(id=${selectedDish.id})}" th:method="delete">
+                    <button class="uk-icon-button uk-button-secondary" uk-icon="minus" type="submit"></button>
+               </form>
             </td>
         </tr>
         </tbody>
     </table>
     <div th:if="${!selectedDishes.isEmpty}" class="uk-text-right">
-      <a th:href="@{selected-dish/remove-all}" class="uk-button uk-button-secondary">Usuń wszystkie dania</a>
+        <form action="#" th:action="@{/selected-dish/remove-all}" th:method="delete">
+             <button class="uk-button uk-button-secondary" type="submit">Usuń wszystkie dania</button>
+        </form>
     </div>
+
+
 </div>
 
 </body>

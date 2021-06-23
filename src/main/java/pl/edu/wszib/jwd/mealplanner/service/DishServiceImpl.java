@@ -29,4 +29,10 @@ public class DishServiceImpl implements DishService{
     public void save(Dish dish) {
         dishDao.save(dish);
     }
+
+    @Override
+    @Transactional
+    public void remove(String name) {
+        dishDao.deleteDishByName(name);
+    }
 }

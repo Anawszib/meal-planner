@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface DishDao extends CrudRepository<Dish, Integer> {
     Dish findFirstByName(String name);
+    void deleteDishByName(String name);
 }

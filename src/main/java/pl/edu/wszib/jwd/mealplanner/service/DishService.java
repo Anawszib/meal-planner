@@ -6,4 +6,5 @@ public interface DishService {
     Iterable<Dish> getAllData();
     Dish getDish(String name);
     void save(Dish Dish);
+    void remove(String name);
 }
