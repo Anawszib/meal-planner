@@ -32,7 +32,6 @@
 
                 <div class="uk-margin-top">
                     <button class="uk-icon-button uk-button-secondary" uk-icon="menu"></button>
-<!--                    <button class="uk-button uk-button-secondary uk-width-1-2" type="button">Hover</button>-->
                     <div uk-dropdown>
                         <ul class="uk-nav uk-dropdown-nav">
                             <li><a href="#">Edytuj danie</a></li>
@@ -41,7 +40,11 @@
                                     <button class="uk-button uk-button-text" type="submit">Usuń danie z wybranych</button>
                                 </form>
                             </li>
-                            <li><a th:href="@{/dish/remove-dish/{name}(name=${dish.name})}">Usuń danie</a></li>
+                            <li>
+                                <form action="#" th:action="@{/dish/remove-dish/{name}(name=${dish.name})}" th:method="delete">
+                                    <button class="uk-button uk-button-text" type="submit">Usuń danie</button>
+                                </form>
+                            </li>
                         </ul>
                     </div>
                 </div>

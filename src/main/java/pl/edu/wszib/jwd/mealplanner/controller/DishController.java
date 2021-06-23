@@ -71,7 +71,7 @@ public class DishController {
         return "redirect:/dishes";
     }
 
-    @GetMapping("dish/remove-dish/{name}")
+    @DeleteMapping("dish/remove-dish/{name}")
     public String removeDish(@PathVariable String name){
         Dish dish = dishService.getDish(name);
         selectedDishService.removeByDish(dish);
