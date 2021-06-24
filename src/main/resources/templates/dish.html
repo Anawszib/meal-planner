@@ -36,7 +36,11 @@
                         <ul class="uk-nav uk-dropdown-nav">
                             <li>
 <!--                                <a href="#">Edytuj danie</a>-->
-                                <a th:href="@{/edit-dish/{name}(name=${dish.name})}" class="uk-button uk-button-text">Edytuj danie</a>
+
+                                <form action="#" th:action="@{/edit-dish/{name}(name=${dish.name})}" th:method="get">
+                                    <button class="uk-button uk-button-text" type="submit">Edytuj danie</button>
+                                </form>
+<!--                                <a th:href="@{/edit-dish/{name}(name=${dish.name})}" class="uk-button uk-button-text" type="submit">Edytuj danie</a>-->
                             </li>
                             <li>
                                 <form action="#" th:action="@{/selected-dish/remove-by-name/{name}(name=${dish.name})}" th:method="delete">

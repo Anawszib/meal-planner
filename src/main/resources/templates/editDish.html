@@ -8,7 +8,7 @@
 <body>
 
 <div class="uk-container uk-margin-large-top uk-margin-large-bottom" uk-height-viewport="expand: true">
-    <form id="dish" action="#" th:action="@{/edit-dish/{id}(id=${dish.id})}" th:object="${dish}" th:method="post">
+    <form id="dish" action="#" th:action="@{/edit-dish/{id}(id=${dish.id})}" th:object="${dish}" th:method="put">
         <fieldset class="uk-fieldset">
 
             <div class="uk-margin">

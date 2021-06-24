@@ -77,7 +77,7 @@ public class DishController {
         return "editDish";
     }
 
-    @PostMapping("edit-dish/{id}")
+    @PutMapping("edit-dish/{id}")
     public String putEditDish(@PathVariable Integer id, @Valid Dish dish, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             dish.setId(id);
