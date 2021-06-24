@@ -19,6 +19,13 @@ public class SelectedDishController {
 
     public static final String SELECTED_DISHES_TITLE = "Wybrane dania";
 
+//    @PostMapping("/add")
+//    public String add(Dish selectedDish) {
+//        selectedDishService.add(selectedDish);
+//        return "redirect:/dishes";
+//    }
+
+
     @GetMapping("add/{dishName}")
     public String add(@PathVariable String dishName) {
         Dish dish = dishService.getDish(dishName);

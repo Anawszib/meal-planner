@@ -34,7 +34,10 @@
                     <button class="uk-icon-button uk-button-secondary" uk-icon="menu"></button>
                     <div uk-dropdown>
                         <ul class="uk-nav uk-dropdown-nav">
-                            <li><a href="#">Edytuj danie</a></li>
+                            <li>
+<!--                                <a href="#">Edytuj danie</a>-->
+                                <a th:href="@{/edit-dish/{name}(name=${dish.name})}" class="uk-button uk-button-text">Edytuj danie</a>
+                            </li>
                             <li>
                                 <form action="#" th:action="@{/selected-dish/remove-by-name/{name}(name=${dish.name})}" th:method="delete">
                                     <button class="uk-button uk-button-text" type="submit">Usuń danie z wybranych</button>

@@ -5,10 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.edu.wszib.jwd.mealplanner.model.Dish;
 import pl.edu.wszib.jwd.mealplanner.service.DishService;
 import pl.edu.wszib.jwd.mealplanner.service.SelectedDishService;
@@ -28,6 +25,7 @@ public class DishController {
     public static final String DISHES_TITLE = "Lista dań";
     public static final String DISH_TITLE = "Szczegóły dania";
     public static final String NEW_DISH_TITLE = "Dodaj nowe danie";
+    public static final String EDIT_DISH_TITLE = "Edytuj danie";
 
     @GetMapping({"","/dishes"})
     public String dishes(Model model){
@@ -49,7 +47,7 @@ public class DishController {
     public String addNewDish(Model model){
         Dish dish = new Dish();
         model.addAttribute("title", NEW_DISH_TITLE);
-        model.addAttribute("dish",dish);
+        model.addAttribute("dish", dish);
 
         return "newDish";
     }
@@ -68,6 +66,32 @@ public class DishController {
         }
 
         dishService.save(dish);
+        return "redirect:/dishes";
+    }
+
+    @GetMapping("edit-dish/{name}")
+    public String editDish(@PathVariable String name, Model model){
+        model.addAttribute("title", EDIT_DISH_TITLE);
+        model.addAttribute("dish", dishService.getDish(name));
+
+        return "editDish";
+    }
+
+    @PostMapping("edit-dish/{id}")
+    public String putEditDish(@PathVariable Integer id, @Valid Dish dish, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            dish.setId(id);
+            return "editDish";
+        }
+
+//        if(dishService.getDish(dish.getName()) != null){
+//            FieldError error = new FieldError("dish", "name",
+//                    "Danie o podanej nazwie już istnieje");
+//            bindingResult.addError(error);
+//            return "newDish";
+//        }
+
+        dishService.update(dish);
         return "redirect:/dishes";
     }
 

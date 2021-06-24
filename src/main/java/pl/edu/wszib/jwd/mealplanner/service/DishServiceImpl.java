@@ -32,6 +32,12 @@ public class DishServiceImpl implements DishService{
 
     @Override
     @Transactional
+    public void update(Dish dish){
+        dishDao.save(dish);
+    }
+
+    @Override
+    @Transactional
     public void remove(String name) {
         dishDao.deleteDishByName(name);
     }
