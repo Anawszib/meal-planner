@@ -76,20 +76,23 @@ public class DishController {
 
         return "editDish";
     }
+    
+    @PutMapping("edit-dish")
+    public String putEditDish(@Valid Dish dish, BindingResult bindingResult){
+       Integer id = dish.getId();
+    //    String name = dish.getName();
 
-    @PutMapping("edit-dish/{id}")
-    public String putEditDish(@PathVariable Integer id, @Valid Dish dish, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             dish.setId(id);
             return "editDish";
         }
 
-//        if(dishService.getDish(dish.getName()) != null){
-//            FieldError error = new FieldError("dish", "name",
-//                    "Danie o podanej nazwie już istnieje");
-//            bindingResult.addError(error);
-//            return "newDish";
-//        }
+        if(dishService.getDish(dish.getName()) != null){
+            FieldError error = new FieldError("dish", "name",
+                    "Danie o podanej nazwie już istnieje");
+            bindingResult.addError(error);
+            return "editDish";
+        }
 
         dishService.update(dish);
         return "redirect:/dishes";
