@@ -7,6 +7,7 @@ import pl.edu.wszib.jwd.mealplanner.dao.DishDao;
 import pl.edu.wszib.jwd.mealplanner.model.Dish;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 public class DishServiceImpl implements DishService{
@@ -22,6 +23,11 @@ public class DishServiceImpl implements DishService{
     @Override
     public Dish getDish(String name) {
         return dishDao.findFirstByName(name);
+    }
+
+    @Override
+    public Dish getDish(Integer id) {
+        return dishDao.findFirstById(id);
     }
 
     @Override
@@ -41,4 +47,10 @@ public class DishServiceImpl implements DishService{
     public void remove(String name) {
         dishDao.deleteDishByName(name);
     }
+
+    @Override
+    public List<String> findNamesById(Integer id){
+        return dishDao.findNamesById(id);
+    }
+
 }

@@ -11,6 +11,7 @@ import pl.edu.wszib.jwd.mealplanner.service.DishService;
 import pl.edu.wszib.jwd.mealplanner.service.SelectedDishService;
 
 import javax.validation.Valid;
+import java.util.List;
 
 
 @Controller
@@ -26,6 +27,8 @@ public class DishController {
     public static final String DISH_TITLE = "Szczegóły dania";
     public static final String NEW_DISH_TITLE = "Dodaj nowe danie";
     public static final String EDIT_DISH_TITLE = "Edytuj danie";
+
+    private static String dishName;
 
     @GetMapping({"","/dishes"})
     public String dishes(Model model){
@@ -71,15 +74,16 @@ public class DishController {
 
     @GetMapping("edit-dish/{name}")
     public String editDish(@PathVariable String name, Model model){
+
         model.addAttribute("title", EDIT_DISH_TITLE);
         model.addAttribute("dish", dishService.getDish(name));
 
         return "editDish";
     }
-    
-    @PutMapping("edit-dish")
-    public String putEditDish(@Valid Dish dish, BindingResult bindingResult){
-       Integer id = dish.getId();
+
+    @PutMapping("edit-dish/{id}")
+    public String putEditDish(@PathVariable Integer id, @Valid Dish dish, BindingResult bindingResult){
+//       Integer id = dish.getId();
     //    String name = dish.getName();
 
         if(bindingResult.hasErrors()){
@@ -87,7 +91,8 @@ public class DishController {
             return "editDish";
         }
 
-        if(dishService.getDish(dish.getName()) != null){
+        List<String> namesList = dishService.findNamesById(id);
+        if( dishService.findNamesById(id).contains(dish.getName())){
             FieldError error = new FieldError("dish", "name",
                     "Danie o podanej nazwie już istnieje");
             bindingResult.addError(error);
