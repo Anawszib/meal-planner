@@ -20,8 +20,8 @@ public class SelectedDishController {
     public static final String SELECTED_DISHES_TITLE = "Wybrane dania";
 
 //    @PostMapping("/add")
-//    public String add(Dish selectedDish) {
-//        selectedDishService.add(selectedDish);
+//    public String add(Dish dish) {
+//        selectedDishService.add(dish);
 //        return "redirect:/dishes";
 //    }
 

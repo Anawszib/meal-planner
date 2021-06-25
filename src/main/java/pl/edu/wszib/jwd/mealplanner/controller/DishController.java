@@ -81,17 +81,15 @@ public class DishController {
         return "editDish";
     }
 
-    @PutMapping("edit-dish/{id}")
-    public String putEditDish(@PathVariable Integer id, @Valid Dish dish, BindingResult bindingResult){
-//       Integer id = dish.getId();
-    //    String name = dish.getName();
+    @PutMapping("edit-dish")
+    public String putEditDish( @Valid Dish dish, BindingResult bindingResult){
+       Integer id = dish.getId();
 
         if(bindingResult.hasErrors()){
             dish.setId(id);
             return "editDish";
         }
 
-        List<String> namesList = dishService.findNamesById(id);
         if( dishService.findNamesById(id).contains(dish.getName())){
             FieldError error = new FieldError("dish", "name",
                     "Danie o podanej nazwie już istnieje");
