@@ -41,7 +41,7 @@
             </td>
 
             <td style="width: 30px">
-                <form action="#" th:action="@{/selected-dish/remove/{id}(id=${selectedDish.id})}" th:method="delete">
+                <form action="#" th:action="@{/selected-dish/{id}(id=${selectedDish.id})}" th:method="delete">
                     <button class="uk-icon-button uk-button-secondary" uk-icon="minus" type="submit"></button>
                 </form>
             </td>
@@ -49,7 +49,7 @@
         </tbody>
     </table>
     <div th:if="${!selectedDishes.isEmpty}" class="uk-text-right">
-        <form action="#" th:action="@{/selected-dish/remove-all}" th:method="delete">
+        <form action="#" th:action="@{/selected-dish}" th:method="delete">
             <button class="uk-button uk-button-secondary" type="submit">Usuń wszystkie dania</button>
         </form>
     </div>

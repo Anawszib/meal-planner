@@ -33,7 +33,7 @@ public class SelectedDishController {
         return "redirect:/dishes";
     }
 
-    @DeleteMapping("remove/{id}")
+    @DeleteMapping("{id}")
     public String remove(@PathVariable("id") Integer selectedDishId) {
         selectedDishService.remove(selectedDishId);
         return "redirect:/selected-dish";
@@ -46,7 +46,7 @@ public class SelectedDishController {
         return "redirect:/selected-dish";
     }
 
-    @DeleteMapping("remove-all")
+    @DeleteMapping("")
     public String removeAll() {
         selectedDishService.removeAll();
         return "redirect:/selected-dish";

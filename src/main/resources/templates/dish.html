@@ -38,7 +38,6 @@
                         <ul class="uk-nav uk-dropdown-nav">
                             <li>
 
-
                                 <form action="#" th:action="@{/edit-dish/{name}(name=${dish.name})}" th:method="get">
                                     <button class="uk-button uk-button-text" type="submit">Edytuj danie</button>
                                 </form>
@@ -52,7 +51,7 @@
                                 </form>
                             </li>
                             <li>
-                                <form action="#" th:action="@{/dish/remove-dish/{name}(name=${dish.name})}"
+                                <form action="#" th:action="@{/dish/{name}(name=${dish.name})}"
                                       th:method="delete">
                                     <button class="uk-button uk-button-text" type="submit">Usuń danie</button>
                                 </form>
@@ -81,7 +80,6 @@
         <div class="uk-grid" uk-grid>
 
             <a th:if="${dish.source}" class="uk-margin uk-button" th:href="${dish.source}">Strona źródłowa</a>
-
 
         </div>
 

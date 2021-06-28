@@ -26,8 +26,6 @@ public class DishController {
     public static final String NEW_DISH_TITLE = "Dodaj nowe danie";
     public static final String EDIT_DISH_TITLE = "Edytuj danie";
 
-    private static String dishName;
-
     @GetMapping({"", "/dishes"})
     public String dishes(Model model) {
 
@@ -49,11 +47,10 @@ public class DishController {
         Dish dish = new Dish();
         model.addAttribute("title", NEW_DISH_TITLE);
         model.addAttribute("dish", dish);
-
         return "newDish";
     }
 
-    @PostMapping("add-new-dish")
+    @PostMapping("dish")
     public String postAddNewDish(@Valid Dish dish, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "newDish";
@@ -72,14 +69,12 @@ public class DishController {
 
     @GetMapping("edit-dish/{name}")
     public String editDish(@PathVariable String name, Model model) {
-
         model.addAttribute("title", EDIT_DISH_TITLE);
         model.addAttribute("dish", dishService.getDish(name));
-
         return "editDish";
     }
 
-    @PutMapping("edit-dish")
+    @PutMapping("dish")
     public String putEditDish(@Valid Dish dish, BindingResult bindingResult) {
         Integer id = dish.getId();
 
@@ -99,7 +94,7 @@ public class DishController {
         return "redirect:/dishes";
     }
 
-    @DeleteMapping("dish/remove-dish/{name}")
+    @DeleteMapping("dish/{name}")
     public String removeDish(@PathVariable String name) {
         Dish dish = dishService.getDish(name);
         selectedDishService.removeByDish(dish);

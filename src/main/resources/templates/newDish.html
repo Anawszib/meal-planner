@@ -8,7 +8,7 @@
 <body>
 
 <div class="uk-container uk-margin-large-top uk-margin-large-bottom" uk-height-viewport="expand: true">
-    <form id="newDish" action="#" th:action="@{/add-new-dish}" th:object="${dish}" method="POST">
+    <form id="newDish" action="#" th:action="@{/dish}" th:object="${dish}" method="POST">
         <fieldset class="uk-fieldset">
 
             <div class="uk-margin">
@@ -84,7 +84,6 @@
                     <input name="source" class="uk-input uk-form-width-large" id="source" type="text">
                 </div>
             </div>
-
 
             <div class="uk-text-right">
                 <input class="uk-button uk-button-secondary" type="submit" value="Zapisz">
