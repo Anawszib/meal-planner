@@ -22,12 +22,14 @@
                 ${dish.fiber} or ${dish.salt}" class="uk-margin uk-text-lead" th:text="'Wartości odżywcze'"></div>
                 <div th:if="${dish.energy}" class="uk-margin" th:text="'Kalorie: ' + ${dish.energy} + ' kcal'"></div>
                 <div th:if="${dish.protein}" class="uk-margin" th:text="'Białko: ' + ${dish.protein} + ' g'"></div>
-                <div th:if="${dish.carbohydrates}" class="uk-margin" th:text="'Węglowodany: '+ ${dish.carbohydrates} + ' g'"></div>
+                <div th:if="${dish.carbohydrates}" class="uk-margin"
+                     th:text="'Węglowodany: '+ ${dish.carbohydrates} + ' g'"></div>
                 <div th:if="${dish.fat}" class="uk-margin" th:text="'Tłuszcz: '+ ${dish.fat} + ' g'"></div>
                 <div th:if="${dish.fiber}" class="uk-margin" th:text="'Błonnik: '+ ${dish.fiber} + ' g'"></div>
                 <div th:if="${dish.salt}" class="uk-margin" th:text="'Sól: '+ ${dish.salt} + ' g'"></div>
                 <div class="uk-margin-large-top">
-                    <a th:href="@{/selected-dish/add/{name}(name=${dish.name})}" class="uk-button uk-button-secondary uk-width-1-2">Wybierz danie</a>
+                    <a th:href="@{/selected-dish/add/{name}(name=${dish.name})}"
+                       class="uk-button uk-button-secondary uk-width-1-2">Wybierz danie</a>
                 </div>
 
                 <div class="uk-margin-top">
@@ -43,29 +45,32 @@
 
                             </li>
                             <li>
-                                <form action="#" th:action="@{/selected-dish/remove-by-name/{name}(name=${dish.name})}" th:method="delete">
-                                    <button class="uk-button uk-button-text" type="submit">Usuń danie z wybranych</button>
+                                <form action="#" th:action="@{/selected-dish/remove-by-name/{name}(name=${dish.name})}"
+                                      th:method="delete">
+                                    <button class="uk-button uk-button-text" type="submit">Usuń danie z wybranych
+                                    </button>
                                 </form>
                             </li>
                             <li>
-                                <form action="#" th:action="@{/dish/remove-dish/{name}(name=${dish.name})}" th:method="delete">
+                                <form action="#" th:action="@{/dish/remove-dish/{name}(name=${dish.name})}"
+                                      th:method="delete">
                                     <button class="uk-button uk-button-text" type="submit">Usuń danie</button>
                                 </form>
 
-<!--                                <form action="#" th:action="@{/dish/remove-dish/{name}(name=${dish.name})}" th:method="delete">-->
-<!--                                    <button onclick="myFunction()" class="uk-button uk-button-text" zzz>Usuń danie</button>-->
+                                <!--                                <form action="#" th:action="@{/dish/remove-dish/{name}(name=${dish.name})}" th:method="delete">-->
+                                <!--                                    <button onclick="myFunction()" class="uk-button uk-button-text" zzz>Usuń danie</button>-->
 
-<!--                                    <script>-->
-<!--                                        function myFunction() {-->
+                                <!--                                    <script>-->
+                                <!--                                        function myFunction() {-->
 
-<!--                                            if (confirm("Czy na pewno chcesz usnąć to danie?")) {-->
-<!--                                                <button type="submit">"OK" </button>-->
-<!--                                            } else {-->
+                                <!--                                            if (confirm("Czy na pewno chcesz usnąć to danie?")) {-->
+                                <!--                                                <button type="submit">"OK" </button>-->
+                                <!--                                            } else {-->
 
-<!--                                            }-->
-<!--                                        }-->
-<!--                                    </script>-->
-<!--                                </form>-->
+                                <!--                                            }-->
+                                <!--                                        }-->
+                                <!--                                    </script>-->
+                                <!--                                </form>-->
                             </li>
                         </ul>
                     </div>
@@ -75,7 +80,7 @@
         </div>
         <div class="uk-grid" uk-grid>
 
-                <a th:if="${dish.source}" class="uk-margin uk-button" th:href="${dish.source}">Strona źródłowa</a>
+            <a th:if="${dish.source}" class="uk-margin uk-button" th:href="${dish.source}">Strona źródłowa</a>
 
 
         </div>

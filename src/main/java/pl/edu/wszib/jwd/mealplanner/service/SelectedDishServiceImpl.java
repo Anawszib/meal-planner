@@ -10,7 +10,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-public class SelectedDishServiceImpl implements SelectedDishService{
+public class SelectedDishServiceImpl implements SelectedDishService {
 
     @Autowired
     SelectedDishDao selectedDishDao;
@@ -23,7 +23,7 @@ public class SelectedDishServiceImpl implements SelectedDishService{
 
     @Override
     @Transactional
-    public void remove(Integer id){
+    public void remove(Integer id) {
         selectedDishDao.deleteById(id);
     }
 
@@ -35,7 +35,7 @@ public class SelectedDishServiceImpl implements SelectedDishService{
 
     @Override
     @Transactional
-    public void removeAll(){
+    public void removeAll() {
         selectedDishDao.deleteAll();
     }
 

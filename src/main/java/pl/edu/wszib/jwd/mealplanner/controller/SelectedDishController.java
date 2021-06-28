@@ -29,31 +29,31 @@ public class SelectedDishController {
     @GetMapping("add/{dishName}")
     public String add(@PathVariable String dishName) {
         Dish dish = dishService.getDish(dishName);
-        selectedDishService. add(dish);
+        selectedDishService.add(dish);
         return "redirect:/dishes";
     }
 
     @DeleteMapping("remove/{id}")
-    public String remove(@PathVariable("id") Integer selectedDishId){
+    public String remove(@PathVariable("id") Integer selectedDishId) {
         selectedDishService.remove(selectedDishId);
         return "redirect:/selected-dish";
     }
 
     @DeleteMapping("remove-by-name/{dishName}")
-    public String removeByDish(@PathVariable String dishName){
+    public String removeByDish(@PathVariable String dishName) {
         Dish dish = dishService.getDish(dishName);
         selectedDishService.removeByDish(dish);
         return "redirect:/selected-dish";
     }
 
     @DeleteMapping("remove-all")
-    public String removeAll(){
+    public String removeAll() {
         selectedDishService.removeAll();
         return "redirect:/selected-dish";
     }
 
     @GetMapping({""})
-    public String dataPage(Model model){
+    public String dataPage(Model model) {
         model.addAttribute("title", SELECTED_DISHES_TITLE);
         model.addAttribute("selectedDishes", selectedDishService.getAllData());
         return "selectedDishes";

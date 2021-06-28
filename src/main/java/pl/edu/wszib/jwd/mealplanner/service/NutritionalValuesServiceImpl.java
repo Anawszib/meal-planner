@@ -2,7 +2,6 @@ package pl.edu.wszib.jwd.mealplanner.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.edu.wszib.jwd.mealplanner.dao.NutritionalValuesDao;
 import pl.edu.wszib.jwd.mealplanner.model.Dish;
 import pl.edu.wszib.jwd.mealplanner.model.SelectedDish;
 
@@ -12,9 +11,6 @@ import java.util.Objects;
 
 @Service
 public class NutritionalValuesServiceImpl implements NutritionalValuesService {
-
-    @Autowired
-    NutritionalValuesDao nutritionalValuesDao;
 
     @Autowired
     SelectedDishService selectedDishService;
@@ -28,67 +24,67 @@ public class NutritionalValuesServiceImpl implements NutritionalValuesService {
 
     @Override
     public Double sumEnergy() {
-            return selectedDishService.getAllData().stream()
-                    .map(SelectedDish::getDish)
-                    .map(Dish::getEnergy)
-                    .filter(Objects::nonNull)
-                    .mapToDouble(Double::doubleValue)
-                    .sum();
+        return selectedDishService.getAllData().stream()
+                .map(SelectedDish::getDish)
+                .map(Dish::getEnergy)
+                .filter(Objects::nonNull)
+                .mapToDouble(Double::doubleValue)
+                .sum();
     }
 
     @Override
     public Double sumProtein() {
 
-            return selectedDishService.getAllData().stream()
-                    .map(SelectedDish::getDish)
-                    .map(Dish::getProtein)
-                    .filter(Objects::nonNull)
-                    .mapToDouble(Double::doubleValue)
-                    .sum();
+        return selectedDishService.getAllData().stream()
+                .map(SelectedDish::getDish)
+                .map(Dish::getProtein)
+                .filter(Objects::nonNull)
+                .mapToDouble(Double::doubleValue)
+                .sum();
     }
 
     @Override
     public Double sumCarbohydrates() {
-            return selectedDishService.getAllData().stream()
-                    .map(SelectedDish::getDish)
-                    .map(Dish::getCarbohydrates)
-                    .filter(Objects::nonNull)
-                    .mapToDouble(Double::doubleValue)
-                    .sum();
+        return selectedDishService.getAllData().stream()
+                .map(SelectedDish::getDish)
+                .map(Dish::getCarbohydrates)
+                .filter(Objects::nonNull)
+                .mapToDouble(Double::doubleValue)
+                .sum();
     }
 
     @Override
     public Double sumFat() {
 
-            return selectedDishService.getAllData().stream()
-                    .map(SelectedDish::getDish)
-                    .map(Dish::getFat)
-                    .filter(Objects::nonNull)
-                    .mapToDouble(Double::doubleValue)
-                    .sum();
+        return selectedDishService.getAllData().stream()
+                .map(SelectedDish::getDish)
+                .map(Dish::getFat)
+                .filter(Objects::nonNull)
+                .mapToDouble(Double::doubleValue)
+                .sum();
     }
 
     @Override
     public Double sumFiber() {
 
-            return selectedDishService.getAllData().stream()
-                    .map(SelectedDish::getDish)
-                    .map(Dish::getFiber)
-                    .filter(Objects::nonNull)
-                    .mapToDouble(Double::doubleValue)
-                    .sum();
+        return selectedDishService.getAllData().stream()
+                .map(SelectedDish::getDish)
+                .map(Dish::getFiber)
+                .filter(Objects::nonNull)
+                .mapToDouble(Double::doubleValue)
+                .sum();
 
     }
 
     @Override
     public Double sumSalt() {
 
-            return selectedDishService.getAllData().stream()
-                    .map(SelectedDish::getDish)
-                    .map(Dish::getSalt)
-                    .filter(Objects::nonNull)
-                    .mapToDouble(Double::doubleValue)
-                    .sum();
+        return selectedDishService.getAllData().stream()
+                .map(SelectedDish::getDish)
+                .map(Dish::getSalt)
+                .filter(Objects::nonNull)
+                .mapToDouble(Double::doubleValue)
+                .sum();
     }
 
     @Override

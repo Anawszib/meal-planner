@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository
 public interface SelectedDishDao extends CrudRepository<SelectedDish, Integer> {
-List<SelectedDish> findAll();
-void deleteAllByDish(Dish dish);
+    List<SelectedDish> findAll();
+
+    void deleteAllByDish(Dish dish);
 }

@@ -11,8 +11,6 @@ import pl.edu.wszib.jwd.mealplanner.service.DishService;
 import pl.edu.wszib.jwd.mealplanner.service.SelectedDishService;
 
 import javax.validation.Valid;
-import java.util.List;
-
 
 @Controller
 public class DishController {
@@ -30,8 +28,8 @@ public class DishController {
 
     private static String dishName;
 
-    @GetMapping({"","/dishes"})
-    public String dishes(Model model){
+    @GetMapping({"", "/dishes"})
+    public String dishes(Model model) {
 
         model.addAttribute("title", DISHES_TITLE);
         model.addAttribute("dishes", dishService.getAllData());
@@ -40,14 +38,14 @@ public class DishController {
     }
 
     @GetMapping("dish/{name}")
-    public String getDish(@PathVariable String name, Model model){
+    public String getDish(@PathVariable String name, Model model) {
         model.addAttribute("title", DISH_TITLE);
-        model.addAttribute("dish",dishService.getDish(name));
+        model.addAttribute("dish", dishService.getDish(name));
         return "dish";
     }
 
     @GetMapping("add-new-dish")
-    public String addNewDish(Model model){
+    public String addNewDish(Model model) {
         Dish dish = new Dish();
         model.addAttribute("title", NEW_DISH_TITLE);
         model.addAttribute("dish", dish);
@@ -56,12 +54,12 @@ public class DishController {
     }
 
     @PostMapping("add-new-dish")
-    public String postAddNewDish(@Valid Dish dish, BindingResult bindingResult){
-        if(bindingResult.hasErrors()){
+    public String postAddNewDish(@Valid Dish dish, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
             return "newDish";
         }
 
-        if(dishService.getDish(dish.getName()) != null){
+        if (dishService.getDish(dish.getName()) != null) {
             FieldError error = new FieldError("dish", "name",
                     "Danie o podanej nazwie już istnieje");
             bindingResult.addError(error);
@@ -73,7 +71,7 @@ public class DishController {
     }
 
     @GetMapping("edit-dish/{name}")
-    public String editDish(@PathVariable String name, Model model){
+    public String editDish(@PathVariable String name, Model model) {
 
         model.addAttribute("title", EDIT_DISH_TITLE);
         model.addAttribute("dish", dishService.getDish(name));
@@ -82,15 +80,15 @@ public class DishController {
     }
 
     @PutMapping("edit-dish")
-    public String putEditDish( @Valid Dish dish, BindingResult bindingResult){
-       Integer id = dish.getId();
+    public String putEditDish(@Valid Dish dish, BindingResult bindingResult) {
+        Integer id = dish.getId();
 
-        if(bindingResult.hasErrors()){
+        if (bindingResult.hasErrors()) {
             dish.setId(id);
             return "editDish";
         }
 
-        if( dishService.findNamesById(id).contains(dish.getName())){
+        if (dishService.findNamesById(id).contains(dish.getName())) {
             FieldError error = new FieldError("dish", "name",
                     "Danie o podanej nazwie już istnieje");
             bindingResult.addError(error);
@@ -102,11 +100,10 @@ public class DishController {
     }
 
     @DeleteMapping("dish/remove-dish/{name}")
-    public String removeDish(@PathVariable String name){
+    public String removeDish(@PathVariable String name) {
         Dish dish = dishService.getDish(name);
         selectedDishService.removeByDish(dish);
         dishService.remove(name);
         return "redirect:/dishes";
     }
-
 }

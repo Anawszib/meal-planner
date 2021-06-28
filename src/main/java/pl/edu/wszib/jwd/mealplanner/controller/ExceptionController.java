@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class ExceptionController {
 
     @ExceptionHandler(Exception.class)
-    public String showError(){
+    public String showError() {
         return "error";
     }
 }

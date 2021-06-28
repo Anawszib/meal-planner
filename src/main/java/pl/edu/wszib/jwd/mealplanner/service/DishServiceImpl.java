@@ -10,7 +10,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-public class DishServiceImpl implements DishService{
+public class DishServiceImpl implements DishService {
 
     @Autowired
     DishDao dishDao;
@@ -38,7 +38,7 @@ public class DishServiceImpl implements DishService{
 
     @Override
     @Transactional
-    public void update(Dish dish){
+    public void update(Dish dish) {
         dishDao.save(dish);
     }
 
@@ -49,8 +49,7 @@ public class DishServiceImpl implements DishService{
     }
 
     @Override
-    public List<String> findNamesById(Integer id){
+    public List<String> findNamesById(Integer id) {
         return dishDao.findNamesById(id);
     }
-
 }
