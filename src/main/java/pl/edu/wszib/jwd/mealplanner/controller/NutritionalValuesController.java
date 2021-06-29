@@ -19,7 +19,7 @@ public class NutritionalValuesController {
     @Autowired
     SelectedDishService selectedDishService;
 
-    public static final String NUTRITIONAL_VALUES_TITLE = "Wartości odżywcze";
+    private static final String NUTRITIONAL_VALUES_TITLE = "Wartości odżywcze";
 
     @GetMapping({""})
     public String nutritionalValues(Model model) {

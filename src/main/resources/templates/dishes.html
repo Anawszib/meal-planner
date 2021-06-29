@@ -7,16 +7,12 @@
 
 <body>
 
-
 <div class="uk-container uk-margin-large-top" uk-height-viewport="expand: true">
     <div class="uk-grid-large" uk-grid="masonry: true">
         <div class="uk-width-1-4 uk-padding-small">
             <div>
-
                 <a th:href="@{/add-new-dish}"
                    class="uk-button uk-button-secondary uk-margin uk-text-center">Dodaj nowe danie</a>
-
-
             </div>
         </div>
         <div class="uk-width-3-4">
@@ -39,19 +35,6 @@
 
                                     <a th:href="@{/selected-dish/add/{name}(name=${dish.name})}"
                                        class="uk-icon-button uk-button-secondary uk-margin" uk-icon="plus"></a>
-                                    <!--                                    <form action="#" th:action="@{/selected-dish/add}" th:object="${dish}" th:method="POST">-->
-                                    <!--                                        <input type="hidden" th:field="*{dish}" id="dish">-->
-                                    <!--                                        <button class="uk-icon-button uk-button-secondary uk-margin" uk-icon="plus" type="submit"></button>-->
-                                    <!--                                    </form>-->
-
-
-                                    <!--                                    <form id="newDish" action="#" th:action="@{/add-new-dish}" th:object="${dish}" method="POST">-->
-                                    <!--                                        <input class="uk-input uk-form-width-large" id="name" type="text" th:field="*{name}"/></div>-->
-
-                                    <!--                                    <form action="#" th:action="@{/selected-dish/remove/{id}(id=${selectedDish.id})}" th:method="delete">-->
-                                    <!--                                        <button class="uk-icon-button uk-button-secondary" uk-icon="minus" type="submit"></button>-->
-                                    <!--                                    </form>-->
-
                                 </div>
                             </div>
                         </div>

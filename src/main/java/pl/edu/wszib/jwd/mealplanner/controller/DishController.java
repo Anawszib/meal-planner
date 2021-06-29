@@ -21,10 +21,10 @@ public class DishController {
     @Autowired
     SelectedDishService selectedDishService;
 
-    public static final String DISHES_TITLE = "Lista dań";
-    public static final String DISH_TITLE = "Szczegóły dania";
-    public static final String NEW_DISH_TITLE = "Dodaj nowe danie";
-    public static final String EDIT_DISH_TITLE = "Edytuj danie";
+    private static final String DISHES_TITLE = "Lista dań";
+    private static final String DISH_TITLE = "Szczegóły dania";
+    private static final String NEW_DISH_TITLE = "Dodaj nowe danie";
+    private static final String EDIT_DISH_TITLE = "Edytuj danie";
 
     @GetMapping({"", "/dishes"})
     public String dishes(Model model) {
@@ -76,14 +76,11 @@ public class DishController {
 
     @PutMapping("dish")
     public String putEditDish(@Valid Dish dish, BindingResult bindingResult) {
-        Integer id = dish.getId();
-
         if (bindingResult.hasErrors()) {
-            dish.setId(id);
             return "editDish";
         }
 
-        if (dishService.findNamesById(id).contains(dish.getName())) {
+        if (dishService.findNamesById(dish.getId()).contains(dish.getName())) {
             FieldError error = new FieldError("dish", "name",
                     "Danie o podanej nazwie już istnieje");
             bindingResult.addError(error);

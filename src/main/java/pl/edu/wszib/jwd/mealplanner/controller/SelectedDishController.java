@@ -17,14 +17,7 @@ public class SelectedDishController {
     @Autowired
     DishService dishService;
 
-    public static final String SELECTED_DISHES_TITLE = "Wybrane dania";
-
-//    @PostMapping("/add")
-//    public String add(Dish dish) {
-//        selectedDishService.add(dish);
-//        return "redirect:/dishes";
-//    }
-
+    private static final String SELECTED_DISHES_TITLE = "Wybrane dania";
 
     @GetMapping("add/{dishName}")
     public String add(@PathVariable String dishName) {
