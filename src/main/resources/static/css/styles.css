@@ -2,20 +2,11 @@
     border: 1px solid #eaeaea;
 }
 
-.product-card {
-    height: 200px;
-    cursor: pointer;
-}
-
 .footer {
     height: 100px;
-}
-
-.product-not-available {
-    filter: grayscale(100%);
-    cursor: default;
 }
 
 .lightgray {
     color: lightgray;
 }
+

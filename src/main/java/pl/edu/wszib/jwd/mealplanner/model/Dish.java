@@ -1,6 +1,7 @@
 package pl.edu.wszib.jwd.mealplanner.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
@@ -13,11 +14,17 @@ public class Dish {
     @NotEmpty(message = "Nazwa dania jest wymagana")
     @Column(unique = true)
     private String name;
+    @Min(value = 0)
     private Double energy;
+    @Min(value = 0)
     private Double protein;
+    @Min(value = 0)
     private Double carbohydrates;
+    @Min(value = 0)
     private Double fat;
+    @Min(value = 0)
     private Double fiber;
+    @Min(value = 0)
     private Double salt;
     @Column(length = 400)
     private String image;

@@ -28,7 +28,7 @@
                            th:field="*{energy}">
                 </div>
                 <span class="uk-label uk-label-warning"
-                      th:if="${#fields.hasErrors('energy')}">Podaj wartość numeryczną</span>
+                      th:if="${#fields.hasErrors('energy')}">Podaj nieujemną wartość numeryczną</span>
             </div>
 
             <div class="uk-margin">
@@ -38,7 +38,7 @@
                            th:field="*{protein}">
                 </div>
                 <span class="uk-label uk-label-warning"
-                      th:if="${#fields.hasErrors('protein')}">Podaj wartość numeryczną</span>
+                      th:if="${#fields.hasErrors('protein')}">Podaj nieujemną wartość numeryczną</span>
             </div>
 
             <div class="uk-margin">
@@ -47,7 +47,7 @@
                     <input name="carbohydrates" class="uk-input uk-form-width-small" id="carbohydrates" type="text"
                            th:field="*{carbohydrates}">
                 </div>
-                <span class="uk-label uk-label-warning" th:if="${#fields.hasErrors('carbohydrates')}">Podaj wartość numeryczną</span>
+                <span class="uk-label uk-label-warning" th:if="${#fields.hasErrors('carbohydrates')}">Podaj nieujemną wartość numeryczną</span>
             </div>
 
             <div class="uk-margin">
@@ -56,16 +56,16 @@
                     <input name="fat" class="uk-input uk-form-width-small" id="fat" type="text" th:field="*{fat}">
                 </div>
                 <span class="uk-label uk-label-warning"
-                      th:if="${#fields.hasErrors('fat')}">Podaj wartość numeryczną</span>
+                      th:if="${#fields.hasErrors('fat')}">Podaj nieujemną wartość numeryczną</span>
             </div>
 
             <div class="uk-margin">
-                <label class="uk-form-label" for="fiber">Białko (g)</label>
+                <label class="uk-form-label" for="fiber">Błonnik (g)</label>
                 <div class="uk-form-controls">
                     <input name="fiber" class="uk-input uk-form-width-small" id="fiber" type="text" th:field="*{fiber}">
                 </div>
                 <span class="uk-label uk-label-warning"
-                      th:if="${#fields.hasErrors('fiber')}">Podaj wartość numeryczną</span>
+                      th:if="${#fields.hasErrors('fiber')}">Podaj nieujemną wartość numeryczną</span>
             </div>
 
             <div class="uk-margin">
@@ -74,7 +74,7 @@
                     <input name="salt" class="uk-input uk-form-width-small" id="salt" type="text" th:field="*{salt}">
                 </div>
                 <span class="uk-label uk-label-warning"
-                      th:if="${#fields.hasErrors('salt')}">Podaj wartość numeryczną</span>
+                      th:if="${#fields.hasErrors('salt')}">Podaj nieujemną wartość numeryczną</span>
             </div>
 
             <div class="uk-margin">
